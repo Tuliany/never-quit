@@ -10,8 +10,6 @@ const AddCard = () => {
   const [adress, setAdress] = useState('');
   const [email, setEmail] = useState('');
   const [stage,setStage] = useState([])
-  console.log(stage)
-
 
   const postData = () => {
     axios.post(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates`, {
@@ -55,8 +53,8 @@ const AddCard = () => {
             <input placeholder='e-mail'
               onChange={(e) => setEmail(e.target.value)} />
           </Form.Field>
-          <Select onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
-          <Button onClick={() => postData()} type='submit'>Submit</Button>
+          <Select style={{ marginTop: "20px", width: '100%' }} onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
+          <Button style={{marginTop: "24px"}} onClick={() => postData()} type='submit'>Submit</Button>
         </Form>
       </div>
     </div>

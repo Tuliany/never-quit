@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Recruite Canditates
+The case involves creating a web application to manage recruitment candidates
+
+## Introduktion
+Caset innebär att du ska skapa en webapplikation för att hantera rekryteringskandidater. Fokus bör ligga på frontend och det är fullt acceptabelt att använda mockat data utan backend.
+
+### Vi ser framför oss en applikation där det är möjligt att förflytta en kandidat mellan olika steg i en rekryteringsprocess. De olika stegen bör vara:
+[x]. Kontakt
+[x]. Dialog
+[x]. Intervju
+[x]. Erbjudande
+[x]. Avslutad.
+Du har däremot helt fria tyglar vad gäller design och vi ger extra plus för styling, arkitektur och innovation.
+
+### Följande kandidatinformation ska gå att ta fram i applikationen:
+[x] Namn
+[x] Ålder
+[x] Email
+[x] Adress
+[x] Aktuellt rekryteringssteg
+
+### I applikationen ska det gå att:
+[x]Lägga till kandidater
+[x] Ta bort kandidater
+[x] Uppdatera en befintlig kandidats information
+[] Söka bland kandidater
+
+## Övrigt
+Vi förväntar oss att du använder antingen ett lämpligt JavaScript-ramverk eller ASP.NET med C#. Beskriv även hur lösningen byggs och körs lokalt.
+LYCKA TILL!

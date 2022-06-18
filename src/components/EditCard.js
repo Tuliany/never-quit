@@ -8,8 +8,9 @@ const EditCard = () => {
   const [age, setAge] = useState('');
   const [adress, setAdress] = useState('');
   const [email, setEmail] = useState('');
-  const [stage, setStage] = useState('')
+  const [stage, setStage] = useState([])
   const [id, setID] = useState(null);
+  console.log(stage)
 
   useEffect(() => {
     setID(localStorage.getItem('ID'))
@@ -32,7 +33,7 @@ const EditCard = () => {
     })
   }
 
-  const handleDropdownChange = (result) => {
+  const handleDropdownChange = (e, result) => {
     const { value } = result
     setStage(value)
   }
@@ -65,8 +66,8 @@ const EditCard = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)} />
           </Form.Field>
-          <Select onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
-          <Button type='submit' onClick={updateAPIData}>update</Button>
+          <Select style={{ marginTop: "20px", width: '100%' }} onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
+          <Button style={{ marginTop: "24px" }} type='submit' onClick={updateAPIData}>update</Button>
         </Form>
       </div>
     </div>

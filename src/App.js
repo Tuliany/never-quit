@@ -4,6 +4,7 @@ import { Popup, Button } from 'semantic-ui-react'
 import Cards from './components/Cards';
 import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [openEdit, setOpenEdit] = useState(false)
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className='main'>
       <h1 className="title">Candidates</h1>
-      <Popup content='Add candidates' trigger={<Button onClick={()=>setAddCandidate(true)} icon='add' />} >Add Candidate</Popup>
+      <Popup content='Add candidates' trigger={<Button onClick={() => setAddCandidate(true)} icon='add' />} >Add Candidate</Popup>
       <Cards
         handleUpdate={() => setOpenEdit(true)}
         handleClick={() => setAddCandidate(true)}
@@ -21,6 +22,7 @@ function App() {
         {addCandidate && (<AddCard />)}
         {openEdit && (<EditCard />)}
       </div>
+      
     </div>
   );
 }

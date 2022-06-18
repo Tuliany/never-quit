@@ -44,27 +44,6 @@
    font-family: 'Montserrat', sans-serif;
  }
 
- .droppable-box {
-  display: flex;
-  flex-direction: column;
- }
-
- .droppable-titles {
-  display: flex;
-  height: 72px;
- }
-
- .droppable-title {
-   display: flex;
-   height: 72px;
-   width: 200px;
- }
- 
- .create-form label {
-   color: whitesmoke !important;
-   font-family: 'Montserrat', sans-serif;
-   font-size: 12px !important;
- }
 
  .flex{
   display: flex;
@@ -74,10 +53,4 @@
 
  .columnFlex {
   display: flex;
- }
-
- .table{
-  height: 80vh;
-  width:200px;
-  overflow: scroll;
  }
