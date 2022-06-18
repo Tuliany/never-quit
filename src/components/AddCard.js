@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Form, Flex } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Button, Form } from 'semantic-ui-react';
+import '../App.css'
 import axios from 'axios'
 
 const AddCard = () => {
@@ -19,31 +20,35 @@ const AddCard = () => {
     })
   }
 
-
   return (
-    <Form className="create-form">
-      <Form.Field>
-        <label>First Name</label>
-        <input placeholder='name'
-          onChange={(e) => setName(e.target.value)} />
-      </Form.Field>
-      <Form.Field>
-        <label>Age</label>
-        <input placeholder='age'
-          onChange={(e) => setAge(e.target.value)} />
-      </Form.Field>
-      <Form.Field>
-        <label>Adress</label>
-        <input placeholder='adress'
-          onChange={(e) => setAdress(e.target.value)} />
-      </Form.Field>
-      <Form.Field>
-        <label>E-mail</label>
-        <input placeholder='e-mail'
-          onChange={(e) => setEmail(e.target.value)} />
-      </Form.Field>
-      <Button onClick={() => postData()} type='submit'>Submit</Button>
-    </Form>
+    <div className="fixedBg">
+      <div className='modal'>
+        <Form style={{ width: "250px" }}>
+          <Form.Field>
+            <label>First Name</label>
+            <input placeholder='name'
+              onChange={(e) => setName(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>Age</label>
+            <input placeholder='age'
+              onChange={(e) => setAge(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>Adress</label>
+            <input placeholder='adress'
+              onChange={(e) => setAdress(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>E-mail</label>
+            <input placeholder='e-mail'
+              onChange={(e) => setEmail(e.target.value)} />
+          </Form.Field>
+          <Button onClick={() => postData()} type='submit'>Submit</Button>
+        </Form>
+      </div>
+    </div>
+
   )
 }
-export default AddCard
+export default AddCard;

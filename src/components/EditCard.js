@@ -24,43 +24,41 @@ const EditCard = () => {
       adress,
       email,
     }).then(() => {
-      window.location.reload(false);
-      console.log(name, age, email, adress)
+      window.location.reload(false)
     })
-  }  
+  }
   
-
-
-
   return (
-    <div>
-      <Form className="create-form">
-        <Form.Field>
-          <label>First Name</label>
-          <input placeholder='name'
-            value={name}
-            onChange={(e) => setName(e.target.value)} />
-        </Form.Field>
-        <Form.Field>
-          <label>Age</label>
-          <input placeholder='age'
-            value={age}
-            onChange={(e) => setAge(e.target.value)} />
-        </Form.Field>
-        <Form.Field>
-          <label>Adress</label>
-          <input placeholder='adress'
-            value={adress}
-            onChange={(e) => setAdress(e.target.value)} />
-        </Form.Field>
-        <Form.Field>
-          <label>E-mail</label>
-          <input placeholder='e-mail'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)} />
-        </Form.Field>
-        <Button type='submit' onClick={updateAPIData}>update</Button>
-      </Form>
+    <div className='fixedBg'>
+      <div className='modal'>
+        <Form style={{ width: "250px" }} className="create-form">
+          <Form.Field>
+            <label>First Name</label>
+            <input placeholder='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>Age</label>
+            <input placeholder='age'
+              value={age}
+              onChange={(e) => setAge(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>Adress</label>
+            <input placeholder='adress'
+              value={adress}
+              onChange={(e) => setAdress(e.target.value)} />
+          </Form.Field>
+          <Form.Field>
+            <label>E-mail</label>
+            <input placeholder='e-mail'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
+          </Form.Field>
+          <Button type='submit' onClick={updateAPIData}>update</Button>
+        </Form>
+      </div>
     </div>
   )
 }
