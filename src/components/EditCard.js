@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Select } from 'semantic-ui-react';
+import Stage from './Stage';
 import axios from 'axios';
 
 const EditCard = () => {
@@ -7,6 +8,7 @@ const EditCard = () => {
   const [age, setAge] = useState('');
   const [adress, setAdress] = useState('');
   const [email, setEmail] = useState('');
+  const [stage, setStage] = useState('')
   const [id, setID] = useState(null);
 
   useEffect(() => {
@@ -15,19 +17,26 @@ const EditCard = () => {
     setAge(localStorage.getItem('Age'));
     setAdress(localStorage.getItem('Adress'))
     setEmail(localStorage.getItem('E-mail'))
+    setStage(localStorage.getItem('Stage'))
   }, []);
 
   const updateAPIData = () => {
-    axios.put(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/crud/CRUD/${id}`, {
+    axios.put(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates/${id}`, {
       name,
       age,
       adress,
       email,
+      stage,
     }).then(() => {
       window.location.reload(false)
     })
   }
-  
+
+  const handleDropdownChange = (result) => {
+    const { value } = result
+    setStage(value)
+  }
+
   return (
     <div className='fixedBg'>
       <div className='modal'>
@@ -56,6 +65,7 @@ const EditCard = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)} />
           </Form.Field>
+          <Select onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
           <Button type='submit' onClick={updateAPIData}>update</Button>
         </Form>
       </div>

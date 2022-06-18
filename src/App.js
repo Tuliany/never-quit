@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Popup, Button } from 'semantic-ui-react'
-import Cards from './components/Card';
+import Cards from './components/Cards';
 import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
 

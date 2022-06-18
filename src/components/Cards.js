@@ -6,34 +6,36 @@ import '../App.css'
 
 const Cards = ({ handleUpdate }) => {
   const [APIData, setAPIData] = useState([]);
-  const [stage, setStage] = useState()
+  console.log()
 
   const setData = (data) => {
-    let { id, name, age, adress, email } = data;
+    let { id, name, age, adress, email, stage } = data;
     localStorage.setItem('ID', id);
     localStorage.setItem('Name', name);
     localStorage.setItem('Age', age);
     localStorage.setItem('Adress', adress);
     localStorage.setItem('E-mail', email);
+    localStorage.setItem('Stage', stage);
   }
 
   useEffect(() => {
-    axios.get(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/crud/CRUD`)
+    axios.get(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates`)
       .then((response) => {
         setAPIData(response.data);
+        console.log(response.data)
       })
   }, [])
 
 
   const getData = () => {
-    axios.get(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/crud/CRUD`)
+    axios.get(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates`)
       .then((getData) => {
         setAPIData(getData.data);
       })
   }
 
   const onDelete = (id) => {
-    axios.delete(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/crud/CRUD/${id}`)
+    axios.delete(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates/${id}`)
       .then(() => {
         getData();
       })
@@ -51,7 +53,9 @@ const Cards = ({ handleUpdate }) => {
               <Card.Description>
                {data.email}
               </Card.Description>
-              <Select onChange={(e) => setStage(e.target.value)} placeholder='Recruite stage' options={Stage} />
+              <Card.Header>recruite stage:
+                {Stage.filter((stage) => stage.value === data.stage).map((s) => s.text)}
+                 </Card.Header>
             </Card.Content>
             <Card.Content extra>
               <div className='ui two buttons'>

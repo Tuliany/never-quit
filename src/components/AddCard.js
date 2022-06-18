@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Select } from 'semantic-ui-react';
+import Stage from './Stage';
 import '../App.css'
 import axios from 'axios'
 
@@ -8,16 +9,26 @@ const AddCard = () => {
   const [age, setAge] = useState('');
   const [adress, setAdress] = useState('');
   const [email, setEmail] = useState('');
+  const [stage,setStage] = useState([])
+  console.log(stage)
+
 
   const postData = () => {
-    axios.post(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/crud/CRUD`, {
+    axios.post(`https://62ac39c2bd0e5d29af1d7a1b.mockapi.io/candidates/candidates`, {
       name,
       age,
       adress,
       email,
+      stage
     }).then(() => {
       window.location.reload(false);
     })
+  }
+
+  const handleDropdownChange = (e, result) => {
+    const { value } = result
+    console.log(result)
+    setStage(value)
   }
 
   return (
@@ -44,6 +55,7 @@ const AddCard = () => {
             <input placeholder='e-mail'
               onChange={(e) => setEmail(e.target.value)} />
           </Form.Field>
+          <Select onChange={handleDropdownChange} placeholder='Recruite stage' options={Stage} />
           <Button onClick={() => postData()} type='submit'>Submit</Button>
         </Form>
       </div>
